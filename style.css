@@ -1,0 +1,225 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto&display=swap');
+
+.container {
+    font-family: 'Roboto', sans-serif;
+    width: 621px;
+    height: 462px;
+    margin: 50px auto auto;
+    border: 1px solid black;
+}
+.content {
+    width: 600px;
+    height: 435px;
+    margin: 14px 10px 13px;
+    border: 1px solid black;
+}
+
+/* search-menu  */
+.search-menu  {
+    width: 100%;
+    height: 45px;
+    border-bottom: 1px solid black;
+    font-size: 18px;
+}
+.city-search {
+    display: block;
+    float: left;
+    color: #696969;
+    padding: 0;
+    border: none;
+    margin: 10px 10px 10px;
+    font-size: 21px;
+    width: 520px;
+}
+.city-search[type="text"] {
+    color: black;
+}
+.search-btn {
+    display: block;
+    float: right;
+    margin: 11px 16px;
+    height: 23px;
+    width: 23px;
+    border: 0;
+    background-color: #fff;
+    background-image: url("Shape.svg");
+}
+/* search-menu  */
+/* left-side */
+.tabs {
+    display: flex;
+    flex-wrap: wrap;
+    float: left;
+    width: 50%;
+    border-right: 1px solid black;
+    height: calc(100% - 45px);
+}
+.tabs>input[type="radio"] {
+    display: none;
+}
+
+.tabs>div {
+    display: none;
+    font-size: 20px;
+    order: 1;
+    height: 345px;
+    width: 100%;
+    border-bottom: 1px solid black;
+}
+#tab-btn-1:checked~#content-1,
+  #tab-btn-2:checked~#content-2,
+  #tab-btn-3:checked~#content-3 {
+    display: block;
+}
+.tabs>label {
+    height: 44px;
+    order: 2;
+    width: 99px;
+    text-align: center;
+    line-height: 44px;
+}
+.tabs>input[type="radio"]:checked+label {
+    background-color: #000;
+    color: #FFF;
+  }
+#tab-2 {
+    border-left: 1px solid black;
+    border-right: 1px solid black;
+}
+
+        /* Contents */
+.city-temperature {
+    font-size: 70px;
+    margin: 20px 23px;
+}
+.picture-temperature {
+    margin-top: 25px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+    height: 100px;
+    width: 100px;
+    opacity: 0;
+}
+.city-name-1 {
+    display: block;
+    float: left;
+    margin: 80px 20px 10px;
+}
+.city-like {
+    float: right;
+    display: block;
+    margin: 80px 20px 10px;
+    opacity: 0;
+}
+.city-name-2 {
+    font-size: 24px;
+    margin: 33px 94px 7px 18px;
+}
+.city-list {
+    padding: 0;
+    font-size: 24px;
+    margin: 25px 150px 40px 18px
+}
+
+.city-name-3 {
+    font-size: 24px;
+    margin: 33px 94px 7px 18px;
+}
+.time-list {
+    padding: 0;
+    margin: 10px;
+    overflow: auto;
+    height: 275px;
+}
+.time-list::-webkit-scrollbar {
+    width: 0px;
+}
+.time-block {
+    font-size: 18px;
+    margin-bottom: 9px;
+    border: 1px solid black;
+    display: grid;
+    grid-template-columns: repeat(2, 55px);
+    grid-template-rows: repeat(2, 38px);
+    grid-row-gap: 20px;
+    grid-column-gap: 144px;
+    padding: 7px 10px 20px;
+}
+.time {
+    text-align: right;
+}
+.info-temperature{
+    width: 160px;
+}
+.img-temperature {
+    text-align: right;
+}
+        /* Contents */
+
+/* left-side */
+
+/* right-side */
+.right-side {
+    display: block;
+    float: left;
+    width: calc(50% - 1.1px);
+    height: calc(100% - 45px);
+    font-size: 24px;
+}
+.added-locations{
+    display: block;
+    border-bottom: 1px solid black;
+    width: 100%;
+}
+.add-loc {
+    margin: 33px 94px 7px 18px;
+}
+.cities-list {
+    overflow:auto;
+    width: 280px;
+    height: 280px;
+    padding: 0;
+    margin: 25px 150px 40px 18px
+}
+.cities-list::-webkit-scrollbar {
+    width: 0px;
+}
+.item {
+    width: 260px;
+    margin-top: 17.8px;
+}
+/* right-side */
+
+
+.item-city {
+    width: 260px;
+    margin-top: 17.8px;
+    cursor: pointer;
+}
+.img-icon {
+    width: 40px;
+    height: 40px;
+}
+.info-item-2 {
+    margin-top: 5px;
+}
+
+#content-1, #content-2, #content-3 {
+    order: 1;
+}
+#tab-btn-1, #tab-btn-2, #tab-btn-3 {
+    order: 2;
+}
+
+
+
+
+
+
+p{
+    margin: 0;
+}
+li {
+    list-style-type: none;
+}

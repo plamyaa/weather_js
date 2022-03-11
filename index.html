@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="style.css">
+    <title>Weather</title>
+</head>
+
+<body>
+    <div class="container">
+        <div class="content">
+            <form onsubmit="return false" class="search-menu">
+                <input type="text" placeholder="Enter city" class="city-search">
+                <button class="search-btn" src="Shape.svg"></button>
+            </form>
+            <div class="tabs">
+                <input type="radio" name="tab-btn" id="tab-btn-1" value="" checked>
+                <label for="tab-btn-1">Now</label>
+                <input type="radio" name="tab-btn" id="tab-btn-2" value="">
+                <label for="tab-btn-2" id="tab-2">Details</label>
+                <input type="radio" name="tab-btn" id="tab-btn-3" value="">
+                <label for="tab-btn-3">Forecast</label>
+                <div id="content-1">
+                    <p class="city-temperature"></p>
+                    <img src="" class="picture-temperature">
+                    <div>
+                        <p class="city-name-1"></p>
+                        <img src="Heart.svg" class="city-like">
+                    </div>
+                </div>
+                <div id="content-2">
+                    <p class="city-name-2"></p>
+                    <ul class="city-list">
+                        <li class="item" id="temp"></li>
+                        <li class="item" id="temp-2"></li>
+                        <li class="item" id="weather"></li>
+                        <li class="item" id="sunrise"></li>
+                        <li class="item" id="sunset"></li>
+                    </ul>
+                </div>
+                <div id="content-3">
+                    <p class="city-name-3"></p>
+                    <ul class="time-list">
+                        
+                    </ul>
+                </div>
+            </div>
+            <div class="right-side">
+                <div class="added-locations">
+                    <p class="add-loc">Added Locations:</p>
+                </div>
+                <ul class="cities-list">
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    <script src="main.js" type="module"></script>
+</body>
+
+</html>

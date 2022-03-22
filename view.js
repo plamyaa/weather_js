@@ -34,3 +34,5 @@ export function editTime(value) {
     let date = new Date(value * 1000);
     return (date.getHours() < 10 ? '0' + date.getHours() : date.getHours())+ ":" + (date.getMinutes() < 10 ? '0' + date.getMinutes() : date.getMinutes());
 }
+
+export let keys = Object.keys(localStorage);

@@ -104,7 +104,7 @@
 .city-name-1 {
     display: block;
     float: left;
-    margin: 80px 20px 10px;
+    margin: 80px 0px 10px 20px;
 }
 .city-like {
     float: right;

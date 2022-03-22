@@ -1,10 +1,13 @@
-import { WEATHER_UI, LOCATIONS, isEmpty, apiKey, serverUrl, roundTemp, editTime} from "./view.js";
+
+import { WEATHER_UI, LOCATIONS, isEmpty, apiKey, serverUrl, roundTemp, editTime, keys} from "./view.js";
 
 WEATHER_UI.SEARCH_BTN.addEventListener('click', sendCity);
 WEATHER_UI.NOW.LIKE.addEventListener('click', _toggle);
 
-async function sendCity() {
+addCurrentCity();
+addFavouriteCity();
 
+async function sendCity() {
     let cityValue = WEATHER_UI.SEARCH_INPUT.value;
     if (cityValue === isEmpty)
         return;
@@ -27,10 +30,45 @@ async function sendCity() {
 
         forecastAdd(json);
         likeCheck(cityValue);
+        getCurrentCity(json.city.name);
     } 
     else {
         alert("Ошибка HTTP: " + response.status);
     }
+}
+
+function addCurrentCity() {
+    for(let key of keys) {
+        if (key == "current") {
+            WEATHER_UI.SEARCH_INPUT.value = localStorage.getItem(key);
+            sendCity();
+        }
+    }
+}
+
+function addFavouriteCity() {
+    for(let key of keys) {
+        if (key != "current") {
+            addLocation(localStorage.getItem(key));
+        }
+    }
+}
+
+function deleteFavouriteCity (element) {
+    for(let key of keys) {
+        if (localStorage.getItem(key) == element) {
+            localStorage.removeItem(key);
+            getCurrentCity(WEATHER_UI.NOW.CITY.textContent);
+        }
+    }
+}
+
+function getCurrentCity(element) {
+    localStorage.setItem('current', element);
+}
+
+function getFavouriteCity(element) {
+    localStorage.setItem(localStorage.length - 1, element);
 }
 
 function forecastAdd(json){
@@ -68,11 +106,13 @@ function likeCheck(cityValue){
 function _toggle(){
     if (this.getAttribute("src") == "Heart.svg" ){
         this.setAttribute("src", "Heart_red.svg");
-        addLocation(WEATHER_UI.NOW.CITY.textContent);  
+        addLocation(WEATHER_UI.NOW.CITY.textContent);
+        getFavouriteCity(WEATHER_UI.NOW.CITY.textContent);
     }
     else {
         this.setAttribute("src", "Heart.svg");
         deleteLocation();
+        deleteFavouriteCity(WEATHER_UI.NOW.CITY.textContent)
     }
 }
 
@@ -94,4 +134,3 @@ function deleteLocation() {
         }
     }
 }
-
